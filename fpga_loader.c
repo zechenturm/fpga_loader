@@ -183,7 +183,7 @@ ssize_t write(struct file *f, const char __user *data, size_t file_size, loff_t 
 		if (conf_done)
 		{
 			break;
-			printk(KERNEL_DEBUG "fpga set config done pin\n");
+			printk(KERN_DEBUG "[%s]: fpga set config done pin\n", MODULE_NAME);
 		}
 			
 
@@ -259,7 +259,7 @@ static int __init fpga_init(void)
 	}
 	else
 	{
-		printk(KERN_DEBUG "[%s]: buffer successfully allocated\n");
+		printk(KERN_DEBUG "[%s]: buffer successfully allocated\n", MODULE_NAME);
 	}
 	
 	
