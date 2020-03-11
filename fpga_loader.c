@@ -181,7 +181,11 @@ ssize_t write(struct file *f, const char __user *data, size_t file_size, loff_t 
 	while (1) {
 		conf_done = read_done();
 		if (conf_done)
+		{
 			break;
+			printk(KERNEL_DEBUG "fpga set config done pin\n");
+		}
+			
 
 		if (*buf & 0x1)
 			set_data();
@@ -251,11 +255,11 @@ static int __init fpga_init(void)
 	buf = kmalloc(MAX_FIRMWARE_SIZE, GFP_USER);
 	if (buf == NULL)
 	{
-		printk(KERN_DEBUG "[%s]: buffer is null!", MODULE_NAME);
+		printk(KERN_DEBUG "[%s]: buffer is null!\n", MODULE_NAME);
 	}
 	else
 	{
-		printk(KERN_DEBUG "[%s]: buffer successfully allocated");
+		printk(KERN_DEBUG "[%s]: buffer successfully allocated\n");
 	}
 	
 	
