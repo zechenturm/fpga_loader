@@ -182,8 +182,8 @@ ssize_t write(struct file *f, const char __user *data, size_t file_size, loff_t 
 		conf_done = read_done();
 		if (conf_done)
 		{
-			break;
 			printk(KERN_DEBUG "[%s]: fpga set config done pin\n", MODULE_NAME);
+			break;
 		}
 			
 
