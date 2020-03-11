@@ -246,6 +246,11 @@ static int __init fpga_init(void)
 	fpga_loader_class = class_create(THIS_MODULE, "fpga_loader");
 	device_create(fpga_loader_class, NULL, dev, NULL, "fpga_loader");
 	buf = kmalloc(MAX_FIRMWARE_SIZE, GFP_USER);
+	if (buf == NULL)
+	{
+		printk(KERN_DEBUG "[%s]: buffer is null!", MODULE_NAME);
+	}
+	
 	printk(KERN_DEBUG "[%s]: successfully loaded\n", MODULE_NAME);
 	return 0;
 	
