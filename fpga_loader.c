@@ -188,9 +188,9 @@ ssize_t write(struct file *f, const char __user *data, size_t file_size, loff_t 
 		else
 			clear_data();
 
-		udelay(1);
+		udelay(2);
 		set_dclk();
-		udelay(1);
+		udelay(2);
 		clear_dclk();
 		
 
