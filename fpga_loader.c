@@ -250,6 +250,11 @@ static int __init fpga_init(void)
 	{
 		printk(KERN_DEBUG "[%s]: buffer is null!", MODULE_NAME);
 	}
+	else
+	{
+		printk(KERN_DEBUG "[%s]: buffer successfully allocated");
+	}
+	
 	
 	printk(KERN_DEBUG "[%s]: successfully loaded\n", MODULE_NAME);
 	return 0;
